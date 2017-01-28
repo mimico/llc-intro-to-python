@@ -47,12 +47,15 @@
         <li>unzip the learner file download (<em>extract all</em> if you’re on a PC)</li>
         <li>open <strong>slides.html</strong> in your browser to view the presentation</li>
       </ul>
+
+<!--
       <p>Install Python 2.7.x</p>
       <ul>
         <li>Windows - <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></li>
         <li>Mac - pre-installed. Go to <strong>Applications &gt; Utilities &gt; Terminal</strong><br>
           In the terminal window type "python" to confirm installation.</li>
       </ul>
+-->
       <p>PyCharm Educational Edition<br>
         <a href="https://www.jetbrains.com/pycharm-educational">https://www.jetbrains.com/pycharm-educational</a>
       </p>
@@ -91,12 +94,12 @@
       <script type="text/template">
         # Today&rsquo;s project
 
-        Imagine you&rsquo;re organizing **National Learn to Code Day 2016**. 
+        Imagine you&rsquo;re organizing **National Learn to Code Day 2017**. 
 
         ![](framework/img/workshop/learn-to-code-day.jpg)
         You want it to be an *even bigger success* than last year, so not only do you need to know how many people attended (so you can beat that target), but you also want to pull other interesting stats to put in a press release.
 
-        Today, you&rsquo;ll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2015.
+        Today, you&rsquo;ll learn to 'think' like a computer as you gather insights into who attended Ladies Learning Code workshops in 2016.
       </script>
     </section>
 
@@ -106,8 +109,8 @@
 
       ###Morning
 
-      * Types 
       * Variables
+      * Data Types 
       * Conditionals &amp; Logic
       * Reading a file
       * For loops
@@ -264,178 +267,6 @@
       </script>
     </section>
 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Data Types
-
-        The previous example used the *integer* number **type** but there are many more.
-
-        * Integer (`int`, whole numbers)
-        * Float (`float`, numbers containing decimals)
-        * String (`str`, words, sentences, literal text)
-        * Boolean (`True`, `False`)
-        * [and many more!](http://www.diveintopython3.net/native-datatypes.html)
-        
-        To display the type, use `type()` and a data value inside the parentheses.
-
-        ```
-        >>> type("hello")
-        <type 'str'>
-
-        >>> type(42)
-        <type 'int'>
-
-        >>> type(3.14159)
-        <type 'float'>
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Functions
-
-        * Functions are bundles of instructions that can be re-used
-        * Reusing functions helps to reduce redundancy
-        * Function can take **arguments** and can **return** values
-        
-        e.g. the `add` function takes `a` and `b` as arguments and will **return** the result
-
-        ```python
-        >>> def add(a, b):
-        ...     return a + b
-        ...
-        >>> add(1, 2)
-        3
-        >>> add(3, 4)
-        7
-        ```
-        
-        It is possible to create your own but today's exercises will use functions provided by Python and its libraries.
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Printing 
-        
-        The `print()` **function** outputs values to the screen. 
-
-        Note the syntax in the examples. Quotes should be included when using a *string* data type.
-
-        ```
-        >>> print("Hello World!")
-        Hello World!
-        ```
-
-        ```
-        >>> print(2 + 2)
-        4
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Concatenation
-        **Concatenation** is used to "add" strings together by joining multiple strings into one.
-        ```
-        >>> print("Hello " + "World!")
-        Hello World!
-        ```
-        
-        <br>
-        But what if we try to join a string and a number?
-
-        ```python
-        >>> print(2 + "2")
-        Traceback (most recent call last):
-        File "<input>", line 1, in <module>
-        TypeError: unsupported operand type(s) for +: 'int' and 'str'
-        ```
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Why did that error happen?
-
-        Python needs to know the data **type** to work with it.  
-        
-        Let&rsquo;s look at that error again.
-
-        ```python
-        >>> print(2 + "2")
-        Traceback (most recent call last):
-        File "<input>", line 1, in <module>
-        TypeError: unsupported operand type(s) for +: 'int' and 'str'
-        ```
-        
-        <br>
-        The first `2` is an integer and the second `"2"` is a **string** type.
-        
-        Python can&rsquo;t figure out how to add a number and string, so it spits out an error.
-
-      </script>
-    </section>
-
-<!-- -------------------- -->
-<!--Typecasting-->
-<!-- -------------------- -->
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Typecasting
-        
-        In Python, you can *change the type*. 
-        
-        In this example, the `int()` function can be used to convert the `"2"` string into a number.
-
-        ```
-        >>> print(2 + int("2"))
-        4
-        ```
-        
-        <br>
-        Remember the `1/2 = 0` example? When Python divides two integers, it rounds the result down to the nearest integer (in this case 0).
-
-        Integer **types** are whole numbers (no decimals), so to be more precise, `float()` can be used to include decimals.
-        ```
-        >>> print(float(1) / float(2))
-        0.5
-        ```
-
-      </script>
-    </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Typecasting (Continued)
-
-        Python can also be used to convert numbers to strings. This example below will return an error.  Why?
-
-        ```
-        >>> print(99 + " bottles of beer on the wall")
-        Traceback (most recent call last):
-          File "<input>", line 1, in <module>
-        TypeError: unsupported operand type(s) for +: 'int' and 'str'
-        ```
-        
-        <br>
-        Use the `str()` function to convert a number to a string.
-
-        ```
-        >>> print(str(99) + " bottles of beer on the wall")
-
-        ```
-        
-        <br>
-        The ability to tell Python to change the type will come in handy later.
-
-      </script>
-    </section>
-
-
 <!-- -------------------- -->
 <!--Variables-->
 <!-- -------------------- -->
@@ -480,7 +311,7 @@
         Why?<!-- .element: class="delayed" -->
         
         You changed <!-- .element: class="delayed" -->`y`, but the old value of `x` is still in memory.   
-        Python will remember variable names until you close PyCharm or [clear them manually](https://docs.python.org/2/tutorial/datastructures.html#the-del-statement).
+        Python will remember variable names until you close PyCharm (or [clear them manually](https://docs.python.org/2/tutorial/datastructures.html#the-del-statement), although this is rarely necessary).
       </script>
     </section>
 
@@ -500,6 +331,212 @@
           * e.g. `first_name` is more descriptive than `fn`
       </script>
     </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Data Types
+
+        The previous example used the *integer* number **type** but there are many more.
+
+        * Integer (`int`, whole numbers)
+        * Float (`float`, numbers containing decimals)
+        * String (`str`, words, sentences, literal text)
+        * Boolean (`True`, `False`)
+        * [and many more!](http://www.diveintopython3.net/native-datatypes.html)
+        
+        To display the type, use the `type()` function and a data value inside the parentheses.
+
+        ```
+        >>> type("hello")
+        <type 'str'>
+
+        >>> a = "hello"
+        >>> type(a)
+        <type 'str'>
+
+        >>> type(42)
+        <type 'int'>
+
+        >>> b = 42
+        >>> type(b)
+        <type 'int'>
+
+        >>> type(3.14159)
+        <type 'float'>
+
+        >>> pi = 3.14159
+        >>> type(pi)
+        <type 'float'>
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Functions
+
+        * Functions are bundles of instructions that can be re-used
+        * Reusing functions helps to reduce redundancy
+        * Function can take **arguments** and can **return** values
+        
+        e.g. the `type` function takes some data as an arguments and will **return** the result
+
+        ```python
+        >>> type ("hello")
+        <type 'str'>
+
+        some_data = 5
+        >>> type(var_data)
+        <type 'int'>
+
+        more_data = "hello"
+        >>> type(more_data)
+        <type 'str'>
+       ```
+        
+        Although it is possible to create your own functions, today's exercises will teach you how to use functions provided by Python and its libraries.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Printing 
+        
+        The `print` statement outputs values to the screen. 
+
+        Note the syntax in the examples. Quotes should be included when using a *string* data type.  These can be single or double quotes, you have to be consistent.
+
+        ```
+        >>> print "Hello, World!"
+        Hello, World!
+
+        >>> print 'Hello, World!'
+        Hello, World!
+ 
+        >>> print 2 + 2
+        4
+        ```
+
+
+         Note:  In Python 3, `print()` is a function, not a statement, and requires parantheses around the data,
+               as the data is an argument being passed to the function.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Concatenation
+        **Concatenation** is used to "add" strings together by joining multiple strings into one.
+        ```
+        >>> print "Hello " + "World!"
+        Hello World!
+        ```
+        
+        <br>
+        But what if we try to join a string and a number?
+
+        ```python
+        >>> print 2 + "2"
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Why did that error happen?
+
+        Python needs to know the data **type** to work with it.  
+        
+        Let&rsquo;s look at that error again.
+
+        ```python
+        >>> print 2 + "2"
+        Traceback (most recent call last):
+        File "<input>", line 1, in <module>
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
+        ```
+        
+        <br>
+        The first `2` is an integer and the second `"2"` is a **string** type.
+        
+        Python can&rsquo;t figure out how to add a number and string, so it spits out an error.
+
+      </script>
+    </section>
+
+<!-- -------------------- -->
+<!--Typecasting-->
+<!-- -------------------- -->
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Typecasting
+        
+        In Python, you can *change the type*. 
+        
+        In this example, the `int()` function can be used to convert the `"2"` string into a number.
+
+        ```
+        >>> print 2 + int("2")
+        4
+        ```
+        
+        <br>
+        Remember the `1/2 = 0` example? When Python divides two integers, it only gives the whole number result of the division, without the remainder (recall long division).
+        This is called `integer division`.
+
+        Integer **types** are whole numbers (no decimals), so to be more precise, `float()` can be used to include decimals.
+        ```
+        >>> a = 1
+        >>> b = 2
+
+        >>> print float(a) / b
+        0.5
+        >>> print a / b
+        0
+        >>> print 1.0 / 2
+        0.5
+        >>> 3.0 / 4.0
+        0.75
+        ```
+
+         Note 1: in the interactive interpreter, the `print` statement can be omitted.
+
+         Note 2: In Python 3, floating point division is the default.  Integer division is indicated by `1//2`.
+                 In Python 2, the `//` can be used to perform integer division on floats.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Typecasting (Continued)
+
+        Python can also be used to convert numbers to strings. This example below will return an error.  Why?
+
+        ```
+        >>> print 99 + " bottles of beer on the wall"
+        Traceback (most recent call last):
+          File "<input>", line 1, in <module>
+        TypeError: unsupported operand type(s) for +: 'int' and 'str'
+        ```
+        
+        <br>
+        Use the `str()` function to convert a number to a string.
+
+        ```
+        >>> print str(99) + " bottles of beer on the wall"
+
+        ```
+        
+        <br>
+        The ability to tell Python to change the type will come in handy later.
+
+      </script>
+    </section>
+
 
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -525,7 +562,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class Exercise 1: Hello World
+        ## Class Exercise 0: Hello World
 
         Instead of just a 'Hello World' message on the screen, take it one step further and have Python say hello to anyone!
 
@@ -556,7 +593,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class Exercise 1: Hello World (part 2)
+        ## Class Exercise 1: Hello World
 
         Using the console is great for testing smaller chunks of code but there is a better way. Python can run code from a file with a `.py` file **extension**. Let&rsquo;s create a Python file!
 
@@ -579,7 +616,7 @@
           name = raw_input("Please enter your name: ")
 
           # ... then continues to this line
-          print("Hello " + name)
+          print "Hello " + name
           ```
 
           Python 3:
@@ -596,7 +633,7 @@
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class Exercise 1: Hello World (part 3)
+        ## Class Exercise 1: Hello World (cont'd)
 
         Code in a **.py** file is just text until you **run** it through the Python program.
 
@@ -627,7 +664,7 @@
         Each `if` statement contains a test. The indented block is the code that will run if the test is `True` and looks something like this:
 
         ```python
-        # Not real code
+        # Not real code (aka. natural language or pseudo code)
         if it is cold outside:
             wear a sweater
         else:
@@ -874,13 +911,20 @@
         
         Back in the console, try adding the below commands.
 
-        When you open a file using the "with" syntax, that creates a new block and the file will be closed automatically for you as soon as you exit the block. In the terminal, you press enter twice after the last line in the block to exit the block
+        ```python
+        >>> chapters = open('./exercises/llc-chapters.csv', 'r')
+        >>> contents = chapters.read()
+        >>> print contents
+        >>> chapters.close() #You must close a file!!!!
+
+        # ... lots of file data ...
+        ```
+
+           To get the current working directory (os dependent):
 
         ```python
-        >>> with open('./exercises/llc-chapters.csv') as chapters:
-        >>>     print(chapters.read())
-        >>>
-        # ... lots of file data ...
+        >>> import os
+        >>> os.getcwd()
         ```
       </script>
     </section>
@@ -895,15 +939,17 @@
         Let&rsquo;s try printing out a few individual lines using the example below. Remember, only add the code after the `>>>` symbol.
 
         ```python
-        >>> with open('./exercises/llc-chapters.csv') as chapters:
-        >>>     print(chapters.readline())
+        >>> chapters = open('./exercises/llc-chapters.csv', 'r')
+        >>> chapters.readline()
         City,Province,Chapter Lead(s)
 
-        >>>     print(chapters.readline())
+        >>> chapters.readline()
         Vancouver,BC,Meghan
 
-        >>>     print(chapters.readline())
+        >>> chapters.readline()
         Calgary,AB,Darcie
+
+        >>> chapters.close() #don't forget to close the file!!!!
         ```
       </script>
     </section>
@@ -932,7 +978,7 @@
       <script type="text/template">
         ## Loops: Reading all the lines in a file
         
-        We've just seen how to print out one line of a time but what if you need to read all the lines in the file?
+        We've just seen how to print out one line at a time but what if you need to read all the lines in the file?
 
         In programming, to perform the same action many times in a row, **loops** are used.  
         In Python, try using the `for` loop to print each of the rows in the file. 
@@ -940,18 +986,21 @@
         Here's some sample code:
 
         ```python
-        >>> with open('./exercises/llc-chapters.csv') as chapters:
-        >>>     for line in chapters:
-        ...         print(line)
-        ...
+        >>> chapters = open('./exercises/llc-chapters.csv', 'r')
+        >>> for line in chapters:
+        ...     print line
+        ... 
+        # lots of stuff is printed
+        >>> chapters.close () #files must be closed!
         ```
         
-        **Pro tip!** After adding `print(line)` & enter, press enter again to execute the loop.
+        **Pro tip!** After adding `print line` & enter, press enter again to execute the loop.
         
         More info: https://docs.python.org/2/tutorial/controlflow.html#for-statements
       </script>
     </section>
 
+<!--
     <section class="slide" data-markdown>
       <script type="text/template">
         ## `for` loop behind the scenes
@@ -968,6 +1017,7 @@
         We&rsquo;ll use the `for` loop in our future exercises to work with a larger file.
       </script>
     </section>
+-->
 
     <section class="slide title" data-markdown>
       <script type="text/template">
@@ -985,7 +1035,7 @@
 
         Python has many useful built in **libraries** &mdash; collections of pre-written code. 
         
-        Today we&rsquo;ll use the **csv** library to help us make more sense of the data contained in a CSV file and learn more about the LLC activities in 2015.
+        Today we&rsquo;ll use the **csv** library to help us make more sense of the data contained in a CSV file and learn more about the LLC activities in 2016.
 
         More info: https://docs.python.org/2/library/csv.html
         
@@ -1032,17 +1082,18 @@
 
         ```
         >>> import csv
-        >>> with open('./exercises/llc-chapters.csv') as chapters_file:
-        >>>     chapters_data = csv.DictReader(chapters_file)
+        >>> chapters_file = open('./exercises/llc-chapters.csv', 'r')
+        >>> chapters_data = csv.DictReader(chapters_file)
         ```
         
         Now, we can pull out one row at a time.
 
         ```
-        >>>     chapter = next(chapters_data)
-        >>>     print(chapter)
+        >>> chapter = next(chapters_data)
+        >>> chapters_file.close() #don't forget to close the file!
+        >>> chapter
         {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
-        >>>     type(chapter)
+        >>> type(chapter) #key: value 
         <type 'dict'>
         ```
       </script>
@@ -1057,12 +1108,11 @@
         Columns representing each city, can now be accessed with a keyword and the same for chapter leads and province.
 
         ```python
-        >>> chapter = {'City': 'Vancouver', 'Chapter Lead(s)': 'Meghan', 'Province': 'BC'}
-        >>> print(chapter['City'])
+        >>> chapter['City']
         Vancouver
-        >>> print(chapter['Province'])
+        >>> chapter['Province']
         BC
-        >>> print(chapter['Chapter Lead(s)'])
+        >>> chapter['Chapter Lead(s)']
         Meghan
         ```
       </script>
@@ -1081,17 +1131,19 @@
 
         ```python
         >>> import csv
-        >>> with open('./exercises/llc-chapters.csv') as chapters_file:
-        >>>     chapters = csv.DictReader(chapters_file)
-        >>>     for chapter in chapters:
-        ...         print(chapter['City'] + ', ' + chapter['Province'])
-        ...         print('    ' + chapter['Chapter Lead(s)'])
+        >>> chapters_file = open('./exercises/llc-chapters.csv', 'r')
+        >>> chapters = csv.DictReader(chapters_file)
+        >>> for chapter in chapters:
+        ...     print(chapter['City'] + ', ' + chapter['Province'])
+        ...     print('    ' + chapter['Chapter Lead(s)'])
         ...
         Vancouver, BC
             Meghan
         Calgary, AB
             Darcie
         # ... Continues for the other chapters
+
+        >>> chapters_file.close() # Close the file!
         ```
       </script>
     </section>
@@ -1143,14 +1195,15 @@
         # file: exercises/demo_loop_count.py
         import csv
 
-        with open('llc-chapters.csv') as csv_file:
-            csv_data = csv.DictReader(csv_file)
+        csv_file = open('llc-chapters.csv', 'r')
+        csv_data = csv.DictReader(csv_file)
 
-            count = 0
-            for row in csv_data:
-                count += 1
-
+        count = 0
+        for row in csv_data:
+            count = count + 1 #shorthand: count += 1
             print("There are " + str(count) + " chapters")
+
+        csv_file.close()
         ```
       </script>
     </section>
@@ -1217,7 +1270,7 @@
 
         So far, we've used small examples to practice using CSV files and recognizing patterns.
         
-        In 2015, Ladies Learning Code had nearly 6500 participants and volunteers involved in events (and not accounting for people who attended multiple events). Do you want to count those?
+        In 2016, Ladies Learning Code had nearly 6500 participants and volunteers involved in events (and not accounting for people who attended multiple events). Do you want to count those?
 
           ![oh no - laverne cox](framework/img/workshop/oh-no-laverne.gif) <!-- .element: width="45%" -->
 
@@ -1233,7 +1286,7 @@
       <script type="text/template">
         ## Final Exercise!
         
-        In order to promote **National Learn to Code Day 2016**, and measure its success relative to 2015, we'll need some stats:
+        In order to promote **National Learn to Code Day 2017**, and measure its success relative to 2016, we'll need some stats:
         
         * number of people signed up for "National Learn to Code Day"
         * total number of people registered for "Kids Learning Code" events or 
