@@ -566,18 +566,13 @@
 
         Instead of just a 'Hello World' message on the screen, take it one step further and have Python say hello to anyone!
 
-        The function `raw_input` in Python 2 (or `input` if you have installed Python 3) will get the data input by the user and **return* the value back to you.
+        The function `raw_input` in Python 2  will get the data input by the user and **return* the value back to you.
         
         1. Give input function a message to let the user know what information is being requested using this syntax (note the quotes):
         
           Python 2
           ```python
           >>> raw_input("What's your name?")
-          ```
-          
-          Python 3
-          ```python
-          >>> input("What's your name?")
           ```
         
         1. The user types a response and hits the **enter** key
@@ -617,16 +612,6 @@
 
           # ... then continues to this line
           print "Hello " + name
-          ```
-
-          Python 3:
-          ```python
-          # Assign the input value to a variable
-          # Your program waits for the user to hit enter
-          name = input("Please enter your name: ")
-
-          # ... then continues to this line
-          print("Hello " + name)
           ```
       </script>
     </section>
@@ -728,11 +713,6 @@
         ```python
         # Python 2:
         weather = raw_input("What is the weather? (cold, raining, etc.)")
-        ```
-        
-        ```python
-        # Python 3:
-        weather = input("What is the weather? (cold, raining, etc.)")
         ```
 
         ```python
