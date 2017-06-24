@@ -1,10 +1,11 @@
 import csv
 
-with open('llc-chapters.csv') as csv_file:
-    csv_data = csv.DictReader(csv_file)
+csv_file = open('llc-chapters.csv', 'r')
+csv_data = csv.DictReader(csv_file)
 
-    count = 0
-    for row in csv_data:
-        count += 1
+count = 0
+for row in csv_data:
+    count = count + 1
 
-    print("There are " + str(count) + " chapters")
+print("There are " + str(count) + " chapters")
+csv_file.close()
